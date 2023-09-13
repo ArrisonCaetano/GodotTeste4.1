@@ -1,9 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dja13aa7nnmwm"]
+[gd_scene load_steps=4 format=3 uid="uid://dja13aa7nnmwm"]
+
+[ext_resource type="Shader" path="res://Shaders/Shader_01.gdshader" id="1_1d2yx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7unyi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jdw10"]
+render_priority = 0
+shader = ExtResource("1_1d2yx")
 
 [node name="Main" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47907, 0, 0)
 mesh = SubResource("BoxMesh_7unyi")
+surface_material_override/0 = SubResource("ShaderMaterial_jdw10")
